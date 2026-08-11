@@ -1,78 +1,164 @@
 <!doctype html>
-<html lang="id">
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Undangan pernikahan Dira dan Arka di Rumah Kaca Amerta.">
-  <meta name="theme-color" content="#101e38">
-  <title>Dira & Arka — Midnight Conservatory</title>
+  <meta name="description" content="Invitación a los XV Años de Ximena — Sábado 14 de Marzo, 2026.">
+  <meta name="theme-color" content="#f7d9d0">
+  <title>Mis XV Años — Ximena</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Opening state: tap to open -->
   <div class="opening" id="opening" aria-modal="true" aria-labelledby="opening-title" role="dialog">
-    <div class="opening__stars" aria-hidden="true"></div>
+    <div class="opening__petals" aria-hidden="true"></div>
     <div class="opening__paper">
-      <p class="eyebrow">SEBUAH MALAM DI BAWAH KACA</p>
-      <h1 id="opening-title">Dira <i>&amp;</i> Arka</h1>
-      <p class="opening__note">Kami mengundang Anda untuk membuka malam yang akan kami kenang selamanya.</p>
-      <button class="brass-clasp" id="brass-clasp" type="button" aria-describedby="clasp-help">
-        <span class="brass-clasp__orbit" aria-hidden="true">✦</span>
-        <span>Buka malam ini</span>
+      <span class="ornament-flourish" aria-hidden="true">
+        <svg viewBox="0 0 120 24" focusable="false"><path d="M4 12h30M86 12h30"/><path class="petal" d="M60 4c6 4 6 12 0 16-6-4-6-12 0-16z"/><circle cx="45" cy="12" r="2"/><circle cx="75" cy="12" r="2"/></svg>
+      </span>
+      <p class="eyebrow">MIS XV AÑOS</p>
+      <h1 id="opening-title">Ximena</h1>
+      <p class="opening__note">Con la bendición de Dios y de mis padres, te invito a celebrar este día tan especial.</p>
+      <button class="tiara-clasp" id="open-button" type="button" aria-describedby="open-help">
+        <span class="tiara-clasp__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 30" focusable="false"><path d="M4 26h40l-4-14-8 8-8-14-8 14-8-8z"/><circle cx="24" cy="6" r="2.4"/><circle cx="8" cy="12" r="2"/><circle cx="40" cy="12" r="2"/></svg>
+        </span>
+        <span>Abrir invitación</span>
       </button>
-      <p class="sr-only" id="clasp-help">Tombol clasp kuningan oval akan membuka detail undangan.</p>
+      <p class="sr-only" id="open-help">Toca el botón de la tiara para abrir los detalles de la invitación.</p>
     </div>
   </div>
 
   <main class="page-shell" id="invitation" tabindex="-1">
-    <article class="invitation" aria-labelledby="couple-names">
-      <div class="constellation-vine constellation-vine--top" aria-hidden="true">
-        <svg viewBox="0 0 390 178" focusable="false"><path d="M-15 128 C46 66 83 155 140 96 S230 83 260 30 S335 28 405 72"/><path d="M55 92 l18 -18 17 19 21 -10 M216 73 l14 18 20 -10 14 15 M316 43 l17 -12 16 17"/><circle cx="57" cy="92" r="3"/><circle cx="90" cy="93" r="2"/><circle cx="216" cy="73" r="3"/><circle cx="250" cy="81" r="2"/><circle cx="316" cy="43" r="3"/><path class="leaf" d="M121 108q-17-21 7-27q5 19-7 27M167 89q13-23 28-8q-12 15-28 8M275 43q-13-21 9-24q4 16-9 24"/></svg>
+    <article class="invitation" aria-labelledby="hero-name">
+
+      <div class="floral floral--top" aria-hidden="true">
+        <svg viewBox="0 0 390 150" focusable="false">
+          <path d="M-15 108 C46 56 83 128 140 86 S230 74 260 34 S335 30 405 66"/>
+          <path class="leaf" d="M121 96q-17-21 7-27q5 19-7 27M167 78q13-23 28-8q-12 15-28 8M275 40q-13-21 9-24q4 16-9 24"/>
+          <g class="rose"><circle cx="57" cy="92" r="8"/><circle cx="57" cy="92" r="4"/></g>
+          <g class="rose"><circle cx="216" cy="62" r="9"/><circle cx="216" cy="62" r="4.5"/></g>
+          <g class="rose"><circle cx="316" cy="42" r="7"/><circle cx="316" cy="42" r="3.5"/></g>
+        </svg>
       </div>
 
-      <header class="masthead">
-        <p class="eyebrow">UNDANGAN PERNIKAHAN</p>
-        <p class="issue">EDISI MALAM · BANDUNG</p>
-        <h1 id="couple-names">Dira <span>dan</span> Arka</h1>
-        <p class="date-line">Sabtu · 18 Oktober 2026</p>
+      <!-- HERO -->
+      <header class="hero" id="hero">
+        <p class="eyebrow">MIS XV AÑOS</p>
+        <div class="tiara" aria-label="Tiara" role="img">
+          <svg viewBox="0 0 160 84" focusable="false" aria-hidden="true">
+            <path class="tiara__band" d="M12 70h136"/>
+            <path class="tiara__peaks" d="M12 70 L40 26 L64 58 L80 12 L96 58 L120 26 L148 70"/>
+            <circle class="tiara__gem" cx="80" cy="12" r="5"/>
+            <circle class="tiara__gem" cx="40" cy="26" r="4"/>
+            <circle class="tiara__gem" cx="120" cy="26" r="4"/>
+            <circle class="tiara__gem" cx="64" cy="58" r="3"/>
+            <circle class="tiara__gem" cx="96" cy="58" r="3"/>
+          </svg>
+        </div>
+        <h1 id="hero-name">Ximena</h1>
+        <p class="hero__date">Sábado 14 de Marzo, 2026</p>
       </header>
 
-      <section class="night-card" aria-labelledby="invitation-title">
-        <p class="night-card__number" aria-hidden="true">18</p>
-        <div class="night-card__copy">
-          <p class="eyebrow">DI ANTARA CAHAYA &amp; DEDAUNAN</p>
-          <h2 id="invitation-title">Mari bertemu saat malam mulai berpendar.</h2>
-          <p>Dengan rasa syukur, kami mengundang Anda untuk hadir, menyaksikan, dan merayakan awal perjalanan kami.</p>
-        </div>
-        <div class="astral-window" aria-label="Ilustrasi jendela konservatori dengan rasi bintang" role="img">
-          <span class="moon"></span><span class="star star--a">✦</span><span class="star star--b">✧</span><span class="star star--c">✦</span>
-          <svg viewBox="0 0 220 210" aria-hidden="true"><path d="M8 205 C38 126 61 193 96 132 S134 112 160 42 S197 39 223 8"/><path d="M40 160l16-18 19 11 17-24 25 10 19-30 21 7"/><circle cx="40" cy="160" r="3"/><circle cx="75" cy="153" r="3"/><circle cx="117" cy="139" r="3"/><circle cx="157" cy="109" r="3"/><circle cx="196" cy="86" r="3"/></svg>
+      <!-- OPENING QUOTE -->
+      <section class="quote" aria-label="Cita">
+        <p class="quote__text">«Hoy dejo atrás la niñez y doy un paso hacia mis sueños, rodeada del amor de quienes hacen mi vida más hermosa.»</p>
+      </section>
+
+      <!-- PADRES & PADRINOS -->
+      <section class="people" id="padres-padrinos" aria-labelledby="people-title">
+        <h2 id="people-title" class="section-title">Con amor</h2>
+        <div class="people__grid">
+          <div class="people__block">
+            <p class="people__label">Mis Padres</p>
+            <p class="people__names">Rafael López<br>&amp; Emilia Peredo</p>
+          </div>
+          <div class="people__block">
+            <p class="people__label">Mis Padrinos</p>
+            <p class="people__names">Freddy Pérez<br>&amp; Mónica Bernal</p>
+          </div>
         </div>
       </section>
 
-      <section class="event-details" id="event-details" aria-label="Detail acara">
-        <div class="detail"><span class="detail__label">AKAD &amp; RESEPSI</span><strong>16.00 WIB</strong><span>hingga malam berakhir</span></div>
-        <div class="detail"><span class="detail__label">RUMAH KACA AMERTA</span><strong>Jl. Puspa 18</strong><span>Bandung, Jawa Barat</span></div>
-      </section>
-      <button class="calendar-link" id="calendar-button" type="button" aria-label="Tambahkan acara ke kalender">Tambahkan ke kalender <span aria-hidden="true">↓</span></button>
-
-      <section class="rsvp-card" id="rsvp-section" aria-labelledby="rsvp-title">
-        <div class="rsvp-card__heading">
-          <p class="eyebrow">KONFIRMASI KEHADIRAN</p>
-          <h2 id="rsvp-title">Titip jawaban Anda</h2>
-          <p>Mohon kabari kami sebelum 4 Oktober 2026.</p>
+      <!-- FECHA + COUNTDOWN -->
+      <section class="date-block" id="fecha" aria-labelledby="date-title">
+        <h2 id="date-title" class="section-title">La Fecha</h2>
+        <p class="date-block__full">Sábado 14 de Marzo, 2026</p>
+        <div class="countdown" id="countdown" aria-live="polite" aria-label="Cuenta regresiva">
+          <div class="countdown__unit"><strong id="cd-days">--</strong><span>Días</span></div>
+          <div class="countdown__unit"><strong id="cd-hours">--</strong><span>Horas</span></div>
+          <div class="countdown__unit"><strong id="cd-minutes">--</strong><span>Min</span></div>
+          <div class="countdown__unit"><strong id="cd-seconds">--</strong><span>Seg</span></div>
         </div>
-        <form id="rsvp-form" novalidate>
-          <div class="field-group"><label for="guest-name">Nama Anda</label><input id="guest-name" name="guest-name" type="text" autocomplete="name" placeholder="Tulis nama lengkap" required aria-describedby="name-error"><p class="field-error" id="name-error"></p></div>
-          <div class="field-group"><label for="attendance">Apakah Anda dapat hadir?</label><select id="attendance" name="attendance" required aria-describedby="attendance-error"><option value="">Pilih jawaban</option><option value="hadir">Ya, dengan senang hati</option><option value="tidak-hadir">Maaf, belum dapat hadir</option></select><p class="field-error" id="attendance-error"></p></div>
-          <div class="field-group"><label for="guest-count">Jumlah tamu</label><select id="guest-count" name="guest-count" required aria-describedby="count-error"><option value="">Pilih jumlah</option><option value="1">1 orang</option><option value="2">2 orang</option><option value="3">3 orang</option><option value="4">4 orang</option></select><p class="field-error" id="count-error"></p></div>
-          <div class="field-group"><label for="notes">Catatan makanan atau pesan <span>(opsional)</span></label><textarea id="notes" name="notes" rows="4" placeholder="Misalnya: vegetarian, atau tuliskan doa baik Anda."></textarea></div>
-          <button class="button button--brass" type="submit">Kirim konfirmasi <span aria-hidden="true">→</span></button>
-          <p class="form-status" id="form-status" aria-live="polite" role="status"></p>
-        </form>
-        <div class="thank-you" id="thank-you" hidden tabindex="-1"><div class="thank-you__mark" aria-hidden="true">✦</div><p class="eyebrow">TERIMA KASIH</p><h2>Sampai jumpa, <span id="guest-name-display">Sahabat</span>.</h2><p id="thank-you-message">Kehadiran Anda akan membuat malam kami semakin terang.</p><button class="calendar-link" id="calendar-button-success" type="button">Simpan detail acara <span aria-hidden="true">↓</span></button></div>
+        <button class="calendar-link" id="calendar-button" type="button" aria-label="Agregar el evento al calendario">Agregar al calendario <span aria-hidden="true">↓</span></button>
       </section>
-      <footer>Dengan hangat, Dira &amp; Arka</footer>
-      <div class="constellation-vine constellation-vine--bottom" aria-hidden="true"><svg viewBox="0 0 390 130" focusable="false"><path d="M-10 94 C55 42 103 117 157 77 S266 77 312 25 S360 34 403 9"/><circle cx="67" cy="56" r="3"/><circle cx="157" cy="77" r="2"/><circle cx="274" cy="56" r="3"/><path class="leaf" d="M109 88q-14-17 6-22q4 15-6 22M213 83q10-18 23-7q-9 13-23 7"/></svg></div>
+
+      <!-- MISA -->
+      <section class="venue" id="misa" aria-labelledby="misa-title">
+        <p class="venue__eyebrow">CEREMONIA</p>
+        <h2 id="misa-title" class="section-title">Misa de Agradecimiento</h2>
+        <p class="venue__time">6:00 PM</p>
+        <p class="venue__place">Iglesia Sagrado Corazón</p>
+        <a class="maps-link" id="misa-maps" href="https://www.google.com/maps/search/?api=1&query=Iglesia+Sagrado+Coraz%C3%B3n" target="_blank" rel="noopener">Ver ubicación <span aria-hidden="true">➜</span></a>
+      </section>
+
+      <!-- RECEPCIÓN -->
+      <section class="venue" id="recepcion" aria-labelledby="recepcion-title">
+        <p class="venue__eyebrow">CELEBRACIÓN</p>
+        <h2 id="recepcion-title" class="section-title">Recepción</h2>
+        <p class="venue__time">7:00 PM</p>
+        <p class="venue__place">Salón de Fiestas Quinta La Bonita</p>
+        <a class="maps-link" id="recepcion-maps" href="https://www.google.com/maps/search/?api=1&query=Sal%C3%B3n+de+Fiestas+Quinta+La+Bonita" target="_blank" rel="noopener">Ver ubicación <span aria-hidden="true">➜</span></a>
+      </section>
+
+      <!-- ITINERARIO -->
+      <section class="itinerary" id="itinerario" aria-labelledby="itinerary-title">
+        <h2 id="itinerary-title" class="section-title">Itinerario</h2>
+        <ol class="timeline">
+          <li class="timeline__item"><span class="timeline__time">7:00 PM</span><span class="timeline__event">Llegada</span></li>
+          <li class="timeline__item"><span class="timeline__time">7:30 PM</span><span class="timeline__event">Vals</span></li>
+          <li class="timeline__item"><span class="timeline__time">8:00 PM</span><span class="timeline__event">Sesión de fotos</span></li>
+          <li class="timeline__item"><span class="timeline__time">9:00 PM</span><span class="timeline__event">Fiesta</span></li>
+          <li class="timeline__item"><span class="timeline__time">2:00 AM</span><span class="timeline__event">Despedida</span></li>
+        </ol>
+      </section>
+
+      <!-- CÓDIGO DE VESTIMENTA -->
+      <section class="dress-code" id="dress-code" aria-labelledby="dress-title">
+        <h2 id="dress-title" class="section-title">Código de Vestimenta</h2>
+        <p class="dress-code__main">Etiqueta</p>
+        <p class="dress-code__note">Se sugiere evitar el color rosa pastel, reservado para la quinceañera.</p>
+      </section>
+
+      <!-- SUGERENCIA DE REGALOS -->
+      <section class="gifts" id="gifts" aria-labelledby="gifts-title">
+        <h2 id="gifts-title" class="section-title">Sugerencia de Regalos</h2>
+        <p class="gifts__note">Tu presencia es mi mejor regalo. Si deseas obsequiarme algo, agradezco una aportación por transferencia:</p>
+        <dl class="bank-details">
+          <div><dt>Banco</dt><dd>[Nombre del banco]</dd></div>
+          <div><dt>Titular</dt><dd>[Nombre del titular]</dd></div>
+          <div><dt>Cuenta</dt><dd>[Número de cuenta]</dd></div>
+          <div><dt>CLABE</dt><dd>[CLABE interbancaria]</dd></div>
+        </dl>
+      </section>
+
+      <!-- CLOSING -->
+      <footer class="closing">
+        <div class="floral floral--bottom" aria-hidden="true">
+          <svg viewBox="0 0 390 110" focusable="false">
+            <path d="M-10 74 C55 32 103 92 157 62 S266 62 312 20 S360 26 403 8"/>
+            <path class="leaf" d="M109 68q-14-17 6-22q4 15-6 22M213 63q10-18 23-7q-9 13-23 7"/>
+            <g class="rose"><circle cx="67" cy="46" r="7"/><circle cx="67" cy="46" r="3.5"/></g>
+            <g class="rose"><circle cx="274" cy="44" r="7"/><circle cx="274" cy="44" r="3.5"/></g>
+          </svg>
+        </div>
+        <p class="closing__text">¡Te esperamos!</p>
+        <p class="closing__sign">Con cariño, Ximena</p>
+      </footer>
+
     </article>
   </main>
   <script src="app.js"></script>

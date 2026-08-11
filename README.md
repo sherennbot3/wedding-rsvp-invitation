@@ -1,23 +1,38 @@
-# Midnight Conservatory — Wedding RSVP Invitation
+# Mis XV Años — Ximena (Invitación Digital)
 
-A dependency-free, mobile-first Indonesian wedding invitation with an original **midnight conservatory** art direction. It uses only HTML, CSS, inline SVG, and JavaScript—no external artwork, libraries, build tooling, or network dependencies.
+A dependency-free, mobile-first **quinceañera (XV Años)** invitation for Ximena, with an original blush/peach/rose/gold/sage art direction. It uses only HTML, CSS, inline SVG, and JavaScript—no external artwork, libraries, build tooling, or network dependencies (Google Fonts is optional and degrades gracefully to system serif/script fallbacks offline).
+
+This is an **invitation-only** page: it presents the event details and contains **no RSVP form** or attendance-collection controls.
 
 ## Design direction
 
-- Matte ink-blue night paper, warm brass accent, and layered paper-card depth
-- Original hand-drawn constellation-vine and astral-window SVG/CSS illustrations
-- A tactile warm-brass oval clasp that reveals the invitation details
-- Editorial serif type paired with a legible system sans-serif
-- Portrait-first mobile composition; larger screens gain breathing room without changing the reading order
+- Soft blush background with layered peach, rose-pink, gold, and sage accents
+- Original hand-drawn CSS/SVG floral vines, roses, gold flourishes, and a tiara motif
+- A gold tiara-clasp opening state that reveals the invitation
+- Elegant script display type (`Great Vibes`) paired with a refined serif (`Cormorant Garamond`) and graceful serif/system fallbacks
+- Mobile-first composition: centered container (~480px max), fluid `clamp()` typography, 44px+ tap targets, no horizontal scroll
 
-This is an independent visual direction and does not reproduce any third-party pattern, envelope, seal, monogram, or layout.
+This is an independent visual direction and does not reproduce any third-party photos, layout, or artwork.
+
+## Sections
+
+- Hero — "Mis XV Años" + name (Ximena) + tiara
+- Opening poetic quote
+- Padres & Padrinos
+- Fecha + live countdown to the event
+- Misa de Agradecimiento (6:00 PM, Iglesia Sagrado Corazón) with a "Ver ubicación" Google Maps link
+- Recepción (7:00 PM, Salón de Fiestas Quinta La Bonita) with a maps link
+- Itinerario timeline (Llegada, Vals, Sesión de fotos, Fiesta, Despedida 2:00 AM)
+- Código de vestimenta (Etiqueta)
+- Sugerencia de regalos (bank-transfer details placeholder)
+- Closing "¡Te esperamos!"
 
 ## Features
 
-- Opening state with keyboard-accessible brass clasp
+- Opening state with keyboard-accessible tiara button (tap to open)
+- Live countdown to the event date
+- Downloadable `.ics` "add to calendar" button (informational)
 - Editable event data in `app.js` (`eventConfig`)
-- RSVP form with inline validation, `aria-invalid`, status feedback, and personalized success state
-- Downloadable `.ics` calendar file
 - Visible keyboard focus, 44px+ interactive controls, and `prefers-reduced-motion` support
 - Static hosting ready; no dependencies or build step
 
@@ -37,13 +52,13 @@ Open <http://localhost:8080>. Stop with `Ctrl+C`.
 node tests/verify.mjs
 ```
 
-The dependency-free verification script checks the RSVP controls, validation/calendar hooks, midnight-conservatory visual hooks, mobile query, control sizing, and reduced-motion provision.
+The dependency-free verification script confirms the invitation-only markup: the RSVP form is absent, and the opening state, hero/tiara, quote, padres & padrinos, countdown, Misa/Recepción maps links, itinerario timeline, dress code, gifts hooks, closing, palette, script type, mobile query, control sizing, and reduced-motion provision are present.
 
 ## Customize
 
-1. Change display copy in `index.html`.
-2. Change calendar data in `eventConfig` near the top of `app.js`.
-3. Calendar times are UTC basic ICS strings. The sample `20261018T090000Z` equals 16.00 WIB.
+1. Change display copy (names, venues, quote, bank details) in `index.html`.
+2. Change calendar/countdown data in `eventConfig` near the top of `app.js`.
+3. Update the Google Maps `query` values in the `Ver ubicación` links to the exact venue addresses.
 
 ## Deploy to GitHub Pages
 
@@ -54,7 +69,7 @@ The dependency-free verification script checks the RSVP controls, validation/cal
 
 ## Project files
 
-- `index.html` — semantic invitation structure and Indonesian copy
-- `styles.css` — responsive visual system, paper texture, astral art, and accessibility styles
-- `app.js` — opening interaction, RSVP validation/success state, and ICS download
+- `index.html` — semantic invitation structure and Spanish copy
+- `styles.css` — responsive visual system, floral/gold ornaments, and accessibility styles
+- `app.js` — opening interaction, live countdown, and ICS download
 - `tests/verify.mjs` — dependency-free static contract verification
