@@ -1,12 +1,12 @@
 // Edit this object to personalize the event before publishing.
 const eventConfig = {
-  title: 'XV Años de Ximena',
-  // Local event start: Sábado 14 de Marzo, 2026, 18:00 (Misa). Adjust the Z time to your timezone offset.
+  title: 'Pesta 15 Tahun Ximena',
+  // Local event start: Sabtu, 14 Maret 2026, 18.00 (Misa Syukur). Adjust the Z time to your timezone offset.
   start: '20260314T180000',
   end: '20260315T020000',
   target: '2026-03-14T18:00:00', // countdown target (local time)
-  location: 'Iglesia Sagrado Corazón',
-  description: 'Misa de Agradecimiento y Recepción por los XV Años de Ximena.'
+  location: 'Gereja Sagrado Corazón',
+  description: 'Misa Syukur dan Resepsi Pesta 15 Tahun Ximena.'
 };
 
 const opening = document.querySelector('#opening');

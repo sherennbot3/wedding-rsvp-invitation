@@ -12,77 +12,125 @@ assert.doesNotMatch(html, /id="attendance"/, 'attendance input must be removed')
 assert.doesNotMatch(html, /id="guest-count"/, 'guest-count input must be removed');
 assert.doesNotMatch(html, /<form/, 'no form element allowed');
 
+// Language: Bahasa Indonesia.
+assert.match(html, /<html lang="id">/, 'html lang must be id');
+assert.match(html, /Undangan Pesta 15 Tahun Ximena/, 'meta description in Indonesian');
+assert.match(html, /<title>Pesta 15 Tahun — Ximena<\/title>/, 'title in Indonesian');
+
 // Opening state (tap to open).
 assert.match(html, /id="opening"/);
 assert.match(html, /id="open-button"/);
+assert.match(html, /Buka Undangan/, 'open button label in Indonesian');
+assert.match(html, /Ketuk tombol tiara/, 'sr-only open help in Indonesian');
 assert.match(js, /open-button/);
 assert.match(js, /is-opened/);
 assert.match(css, /\.opening\.is-opened/);
 
-// Hero: Mis XV Años + name + tiara.
-assert.match(html, /MIS XV A/);
+// Hero: eyebrow + name + tiara.
+assert.match(html, /PESTA 15 TAHUN/, 'hero eyebrow in Indonesian');
 assert.match(html, /id="hero-name"/);
 assert.match(html, />Ximena</);
 assert.match(html, /class="tiara"/);
 assert.match(css, /\.tiara__gem/);
 
-// Opening quote.
+// Opening quote (Indonesian).
 assert.match(html, /class="quote"/);
+assert.match(html, /meninggalkan masa kanak-kanak/, 'quote translated to Indonesian');
 
-// Padres & padrinos.
+// Padres & padrinos (labels translated, names kept).
 assert.match(html, /id="padres-padrinos"/);
+assert.match(html, /Dengan Cinta/, 'section title Con amor -> Dengan Cinta');
+assert.match(html, /Orang Tua<\/p>/, 'Mis Padres -> Orang Tua');
+assert.match(html, /Orang Tua Baptis/, 'Mis Padrinos -> Orang Tua Baptis');
 assert.match(html, /Rafael L[oó]pez/);
 assert.match(html, /Emilia Peredo/);
 assert.match(html, /Freddy P[eé]rez/);
 assert.match(html, /M[oó]nica Bernal/);
 
-// Fecha + live countdown.
+// Fecha + live countdown (Indonesian labels).
 assert.match(html, /id="fecha"/);
-assert.match(html, /Sábado 14 de Marzo, 2026/);
+assert.match(html, /Tanggal Acara/, 'La Fecha -> Tanggal Acara');
+assert.match(html, /Sabtu, 14 Maret 2026/, 'date in Indonesian');
 assert.match(html, /id="countdown"/);
 assert.match(html, /id="cd-days"/);
 assert.match(html, /id="cd-seconds"/);
+assert.match(html, /<span>Hari<\/span>/, 'countdown Hari label');
+assert.match(html, /<span>Jam<\/span>/, 'countdown Jam label');
+assert.match(html, /<span>Menit<\/span>/, 'countdown Menit label');
+assert.match(html, /<span>Detik<\/span>/, 'countdown Detik label');
+assert.match(html, /Tambah ke Kalender/, 'Agregar al calendario -> Tambah ke Kalender');
 assert.match(js, /updateCountdown/);
 assert.match(js, /setInterval/);
 
-// Misa section with maps link.
+// Misa section with maps link (Indonesian).
 assert.match(html, /id="misa"/);
-assert.match(html, /Misa de Agradecimiento/);
+assert.match(html, /UPACARA/, 'CEREMONIA -> UPACARA');
+assert.match(html, /Misa Syukur/, 'Misa de Agradecimiento -> Misa Syukur');
 assert.match(html, /id="misa-maps"/);
-assert.match(html, /Ver ubicaci[oó]n/);
+assert.match(html, /Lihat Lokasi/, 'Ver ubicacion -> Lihat Lokasi');
 
-// Recepción section with maps link.
+// Recepción -> Resepsi section with maps link.
 assert.match(html, /id="recepcion"/);
+assert.match(html, /PERAYAAN/, 'CELEBRACION -> PERAYAAN');
+assert.match(html, /Resepsi/, 'Recepcion -> Resepsi');
 assert.match(html, /Quinta La Bonita/);
 assert.match(html, /id="recepcion-maps"/);
 assert.match(html, /google\.com\/maps/);
 
-// Itinerario timeline.
+// Itinerario -> Rangkaian Acara timeline (Indonesian items).
 assert.match(html, /id="itinerario"/);
+assert.match(html, /Rangkaian Acara/, 'Itinerario -> Rangkaian Acara');
 assert.match(html, /class="timeline"/);
-assert.match(html, /Vals/);
-assert.match(html, /Despedida/);
+assert.match(html, /Kedatangan/, 'timeline item Kedatangan');
+assert.match(html, /Vals \(Waltz\)/, 'timeline item Vals (Waltz)');
+assert.match(html, /Sesi Foto/, 'timeline item Sesi Foto');
+assert.match(html, /Pesta/, 'timeline item Pesta');
+assert.match(html, /Penutup/, 'timeline item Penutup');
 assert.match(css, /\.timeline__item/);
 
-// Código de vestimenta.
+// Photo gallery (Galeri Foto) — placeholder frames, no external images.
+assert.match(html, /id="galeri"/, 'gallery section present');
+assert.match(html, /Galeri Foto/, 'gallery title in Indonesian');
+assert.match(html, /class="gallery__grid"/, 'gallery grid present');
+const frameCount = (html.match(/class="photo-frame"/g) || []).length;
+assert.ok(frameCount >= 3 && frameCount <= 4, `expected 3-4 photo frames, found ${frameCount}`);
+assert.match(html, /class="photo-frame__placeholder"/, 'placeholder frame present');
+assert.match(html, /class="photo-frame__caption"/, 'frame caption present');
+assert.match(html, />Foto 1</, 'caption Foto 1 present');
+assert.match(html, /foto\/foto-1\.jpg/, 'replacement instructions reference local path');
+assert.match(html, /CARA MENGGANTI DENGAN FOTO ASLI/, 'HTML comment with replacement guidance present');
+assert.doesNotMatch(html, /<img[^>]+src="https?:/i, 'gallery must not use external images');
+assert.match(css, /\.gallery__grid/, 'gallery grid styled');
+assert.match(css, /\.photo-frame__placeholder/, 'placeholder styled');
+assert.match(css, /grid-template-columns:1fr 1fr/, 'two-column grid at wider widths');
+
+// Código de vestimenta -> Kode Berpakaian.
 assert.match(html, /id="dress-code"/);
-assert.match(html, /Etiqueta/);
+assert.match(html, /Kode Berpakaian/, 'Codigo de Vestimenta -> Kode Berpakaian');
+assert.match(html, /Formal \(Etiket\)/, 'Etiqueta -> Formal (Etiket)');
 
-// Sugerencia de regalos (bank details placeholder).
+// Sugerencia de regalos -> Saran Hadiah (bank details placeholder, Indonesian labels).
 assert.match(html, /id="gifts"/);
+assert.match(html, /Saran Hadiah/, 'Sugerencia de Regalos -> Saran Hadiah');
 assert.match(html, /class="bank-details"/);
-assert.match(html, /CLABE/);
+assert.match(html, /<dt>Bank<\/dt>/, 'bank label');
+assert.match(html, /<dt>Atas Nama<\/dt>/, 'account holder label');
+assert.match(html, /<dt>Nomor Rekening<\/dt>/, 'account number label');
+assert.match(html, /<dt>Kode<\/dt>/, 'code label');
 
-// Closing.
-assert.match(html, /¡Te esperamos!/);
+// Closing (Indonesian).
+assert.match(html, /Kami Menantikan Kehadiranmu!/, 'closing text in Indonesian');
+assert.match(html, /Dengan penuh kasih, Ximena/, 'closing sign in Indonesian');
 
-// .ics calendar (informational) retained.
+// .ics calendar (informational) retained; Indonesian eventConfig.
 assert.match(html, /id="calendar-button"/);
 assert.match(js, /createCalendarFile/);
 assert.match(js, /BEGIN:VEVENT/);
 assert.match(js, /URL\.createObjectURL/);
+assert.match(js, /Pesta 15 Tahun Ximena/, 'eventConfig title in Indonesian');
+assert.match(js, /Misa Syukur dan Resepsi/, 'eventConfig description in Indonesian');
 
-// Quinceañera palette + script type + mobile-first + a11y hooks.
+// Palette + mobile-first + a11y hooks.
 assert.match(css, /--blush:/);
 assert.match(css, /--gold:/);
 assert.match(css, /--sage:/);
@@ -94,4 +142,4 @@ assert.match(css, /prefers-reduced-motion/);
 assert.match(css, /overflow-x:hidden/);
 assert.match(html, /aria-live="polite"/);
 
-console.log('Static XV Años invitation contract checks passed.');
+console.log('Static Pesta 15 Tahun (Bahasa Indonesia) invitation contract checks passed.');
