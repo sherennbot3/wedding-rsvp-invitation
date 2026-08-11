@@ -11,11 +11,53 @@ const eventConfig = {
 
 const opening = document.querySelector('#opening');
 const openButton = document.querySelector('#open-button');
+const bgMusic = document.querySelector('#bg-music');
+const musicToggle = document.querySelector('#music-toggle');
+const introVideo = document.querySelector('#intro-video');
 
-// Opening state: tap to open.
+// Intro video: if the local file is missing/unplayable, hide the <video> so the
+// elegant CSS placeholder shows through. Guarded; no console errors when absent.
+if (introVideo) {
+  const markVideoMissing = () => introVideo.classList.add('is-missing');
+  introVideo.addEventListener('error', markVideoMissing, true);
+  const src = introVideo.querySelector('source');
+  if (src) src.addEventListener('error', markVideoMissing);
+  // If metadata never loads shortly after paint, assume the file is absent.
+  window.addEventListener('load', () => {
+    if (introVideo.readyState === 0) markVideoMissing();
+  });
+}
+
+// Background music controls. Guard against a missing <audio> element so the
+// page works with zero console errors even when audio/lagu.mp3 is absent.
+function updateMusicToggle() {
+  if (!musicToggle || !bgMusic) return;
+  const playing = !bgMusic.paused;
+  musicToggle.setAttribute('aria-pressed', playing ? 'true' : 'false');
+}
+if (bgMusic && musicToggle) {
+  musicToggle.hidden = false;
+  musicToggle.addEventListener('click', () => {
+    if (bgMusic.paused) {
+      bgMusic.play().then(updateMusicToggle).catch(() => {});
+    } else {
+      bgMusic.pause();
+      updateMusicToggle();
+    }
+  });
+  bgMusic.addEventListener('play', updateMusicToggle);
+  bgMusic.addEventListener('pause', updateMusicToggle);
+}
+
+// Opening state: tap to open. The tap is a valid user gesture, so we start the
+// background song here (wrapped in .catch to silently ignore autoplay policy
+// rejections or a missing audio file).
 openButton.addEventListener('click', () => {
   opening.classList.add('is-opened');
   opening.setAttribute('aria-hidden', 'true');
+  if (bgMusic) {
+    bgMusic.play().then(updateMusicToggle).catch(() => {});
+  }
   setTimeout(() => {
     opening.hidden = true;
     document.querySelector('#invitation').focus();

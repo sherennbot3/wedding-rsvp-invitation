@@ -20,7 +20,7 @@ This is an independent visual direction and does not reproduce any third-party p
 
 ## Sections
 
-- Hero — "Pesta 15 Tahun" + name (Ximena) + tiara
+- Hero — "Pesta 15 Tahun" + name (Ximena) + tiara + **bingkai video intro metalik emas**
 - Kutipan pembuka (opening quote)
 - Orang Tua & Orang Tua Baptis (parents & godparents)
 - Tanggal Acara + live countdown (Hari/Jam/Menit/Detik)
@@ -52,9 +52,43 @@ Each `<figure class="photo-frame">` contains an HTML comment with step-by-step g
 
 The `.photo-frame__img` class inherits the same arch/gold-border/aspect-ratio styling as the placeholder, so swapped-in photos keep the frame aesthetic automatically.
 
+## Video intro (bingkai metalik emas)
+
+Di area hero terdapat sebuah **bingkai vertikal metalik emas** (dibuat sepenuhnya dari CSS: gradien, box-shadow, dan animasi kilau/shimmer yang menghormati `prefers-reduced-motion`) — **tanpa aset berhak cipta**. Di dalamnya ada slot video HTML5 (`muted`, `playsinline`, `loop`, ramah-autoplay) yang bisa Anda ganti dengan video sendiri. Jika file video belum ada, sebuah placeholder elegan otomatis tampil, **tanpa error di console**.
+
+### Cara memasang video intro asli
+
+1. Buat folder bernama `video/` di root proyek (sejajar dengan `index.html`).
+2. Simpan file video Anda di dalamnya sebagai `video/intro.mp4`.
+3. (Opsional) Simpan gambar poster di `foto/intro-poster.jpg` agar tampil sebelum video diputar.
+4. Selesai — video akan muncul otomatis di dalam bingkai emas.
+
+Video sengaja dibuat **tanpa suara (muted)** agar tidak bentrok dengan lagu latar.
+
+## Lagu latar (background music)
+
+Halaman memuat elemen `<audio id="bg-music" loop preload="auto">` (tanpa atribut `autoplay`). Lagu mulai **tepat saat tamu menekan "Buka Undangan"** — ketukan itu adalah interaksi pengguna yang diizinkan browser untuk memutar suara. Sebuah tombol bulat emas di kanan-bawah (target sentuh 44px+, `aria-label` "Putar atau jeda musik", status via `aria-pressed`) memungkinkan tamu menjeda/melanjutkan lagu. Jika file lagu belum ada, semuanya tetap berjalan **tanpa error di console**.
+
+### Cara memasang lagu latar asli
+
+1. Buat folder bernama `audio/` di root proyek (sejajar dengan `index.html`).
+2. Simpan file lagu Anda di dalamnya sebagai `audio/lagu.mp3`.
+3. Selesai — lagu akan mulai otomatis saat undangan dibuka.
+
+## Local folders & files (media)
+
+| Path | Fungsi | Wajib? |
+| --- | --- | --- |
+| `video/intro.mp4` | Video intro di dalam bingkai emas hero | Opsional (placeholder tampil bila kosong) |
+| `foto/intro-poster.jpg` | Poster/thumbnail video intro | Opsional |
+| `audio/lagu.mp3` | Lagu latar yang diputar saat undangan dibuka | Opsional |
+| `foto/foto-1.jpg` … `foto-4.jpg` | Foto galeri | Opsional |
+
 ## Features
 
 - Opening state with keyboard-accessible tiara button (tap to open)
+- Metallic gold intro-video frame with graceful placeholder fallback (self-hosted, replaceable)
+- Background music that starts on the "Buka Undangan" tap, with an accessible gold play/pause toggle
 - Live countdown to the event date
 - Downloadable `.ics` "Tambah ke Kalender" button (informational)
 - Editable event data in `app.js` (`eventConfig`)
@@ -95,7 +129,7 @@ The dependency-free verification script confirms the invitation-only markup: the
 
 ## Project files
 
-- `index.html` — semantic invitation structure and Bahasa Indonesia copy
-- `styles.css` — responsive visual system, floral/gold ornaments, gallery frames, and accessibility styles
-- `app.js` — opening interaction, live countdown, and ICS download
+- `index.html` — semantic invitation structure and Bahasa Indonesia copy (incl. intro-video frame + background audio)
+- `styles.css` — responsive visual system, floral/gold ornaments, gallery frames, metallic intro frame, music toggle, and accessibility styles
+- `app.js` — opening interaction (starts the background song), music play/pause toggle, live countdown, and ICS download
 - `tests/verify.mjs` — dependency-free static contract verification

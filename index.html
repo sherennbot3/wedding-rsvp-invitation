@@ -61,6 +61,42 @@
         </div>
         <h1 id="hero-name">Ximena</h1>
         <p class="hero__date">Sabtu, 14 Maret 2026</p>
+
+        <!-- INTRO VIDEO — bingkai metalik emas (original CSS, tanpa aset berhak cipta) -->
+        <!--
+          CARA MEMASANG VIDEO INTRO ASLI:
+          1. Buat folder bernama "video" di root proyek (sejajar dengan index.html).
+          2. Simpan file video Anda di dalamnya sebagai: video/intro.mp4
+          3. (Opsional) Simpan gambar poster di: foto/intro-poster.jpg
+          4. Selesai — video akan muncul otomatis di dalam bingkai emas ini.
+          Catatan: video sengaja dibuat "muted" (tanpa suara) agar tidak bentrok
+          dengan lagu latar. Jika file video belum ada, placeholder elegan akan
+          tampil otomatis (tanpa error).
+        -->
+        <div class="intro-frame" role="img" aria-label="Bingkai video intro — ganti dengan video Anda">
+          <div class="intro-frame__inner">
+            <video
+              class="intro-frame__video"
+              id="intro-video"
+              muted
+              loop
+              playsinline
+              autoplay
+              preload="metadata"
+              poster="foto/intro-poster.jpg"
+              onerror="this.classList.add('is-missing');"
+              aria-hidden="true">
+              <source src="video/intro.mp4" type="video/mp4">
+            </video>
+            <div class="intro-frame__placeholder" aria-hidden="true">
+              <svg class="intro-frame__glyph" viewBox="0 0 64 64" focusable="false">
+                <circle cx="32" cy="32" r="22"/>
+                <path d="M27 23l16 9-16 9z"/>
+              </svg>
+              <span class="intro-frame__hint">Video Intro</span>
+            </div>
+          </div>
+        </div>
       </header>
 
       <!-- OPENING QUOTE -->
@@ -249,6 +285,32 @@
 
     </article>
   </main>
+
+  <!-- LAGU LATAR (background music) -->
+  <!--
+    CARA MEMASANG LAGU LATAR ASLI:
+    1. Buat folder bernama "audio" di root proyek (sejajar dengan index.html).
+    2. Simpan file lagu Anda di dalamnya sebagai: audio/lagu.mp3
+    3. Selesai — lagu akan mulai otomatis saat tamu menekan "Buka Undangan".
+    Catatan: browser hanya mengizinkan pemutaran suara setelah ada interaksi
+    pengguna, jadi lagu dimulai tepat pada ketukan "Buka Undangan". Jika file
+    belum ada, halaman tetap berjalan normal tanpa error.
+  -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="audio/lagu.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Tombol putar/jeda musik (aksesibel, target sentuh 44px+) -->
+  <button class="music-toggle" id="music-toggle" type="button"
+          aria-label="Putar atau jeda musik" aria-pressed="false" hidden>
+    <span class="music-toggle__icon music-toggle__icon--play" aria-hidden="true">
+      <svg viewBox="0 0 24 24" focusable="false"><path d="M8 5v14l11-7z"/></svg>
+    </span>
+    <span class="music-toggle__icon music-toggle__icon--pause" aria-hidden="true">
+      <svg viewBox="0 0 24 24" focusable="false"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+    </span>
+  </button>
+
   <script src="app.js"></script>
 </body>
 </html>

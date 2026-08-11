@@ -142,4 +142,39 @@ assert.match(css, /prefers-reduced-motion/);
 assert.match(css, /overflow-x:hidden/);
 assert.match(html, /aria-live="polite"/);
 
+// Intro video frame (original CSS metallic gold frame + self-hosted video slot).
+assert.match(html, /class="intro-frame"/, 'intro video frame present');
+assert.match(html, /id="intro-video"/, 'video element present');
+assert.match(html, /<video[\s\S]*?\bmuted\b/, 'intro video is muted');
+assert.match(html, /<video[\s\S]*?\bplaysinline\b/, 'intro video is playsinline');
+assert.match(html, /<video[\s\S]*?\bloop\b/, 'intro video loops');
+assert.match(html, /video\/intro\.mp4/, 'video slot points to local video/intro.mp4');
+assert.match(html, /foto\/intro-poster\.jpg/, 'video poster points to local foto/intro-poster.jpg');
+assert.match(html, /class="intro-frame__placeholder"/, 'graceful placeholder present when video missing');
+assert.match(html, /CARA MEMASANG VIDEO INTRO ASLI/, 'HTML comment explains how to drop in the video');
+assert.match(css, /\.intro-frame/, 'intro frame styled');
+assert.match(css, /@keyframes intro-shimmer/, 'metallic shimmer animation present');
+assert.doesNotMatch(html, /<video[\s\S]*?src="https?:/i, 'intro video must not use external source');
+
+// Background music: audio element + local slot, no autoplay attribute.
+assert.match(html, /id="bg-music"/, 'background audio element present');
+assert.match(html, /<audio id="bg-music" loop preload="auto">/, 'audio is loop + preload, not autoplay attr');
+assert.doesNotMatch(html, /<audio[^>]*\bautoplay\b/, 'audio must not use autoplay attribute');
+assert.match(html, /audio\/lagu\.mp3/, 'audio slot points to local audio/lagu.mp3');
+assert.match(html, /CARA MEMASANG LAGU LATAR ASLI/, 'HTML comment explains how to drop in the song');
+
+// Music toggle button (accessible, Indonesian aria-label, on-theme gold).
+assert.match(html, /id="music-toggle"/, 'music toggle button present');
+assert.match(html, /aria-label="Putar atau jeda musik"/, 'music toggle has Indonesian aria-label');
+assert.match(html, /<button class="music-toggle"[\s\S]*?aria-pressed=/, 'music toggle reflects state via aria-pressed');
+assert.match(css, /\.music-toggle/, 'music toggle styled');
+
+// play() is invoked inside the open-button click handler (user gesture).
+assert.match(js, /bgMusic/, 'app.js references background music element');
+assert.match(js, /bgMusic\.play\(\)/, 'app.js calls bgMusic.play()');
+assert.match(js, /\.catch\(/, 'play() rejection handled silently');
+const openHandler = js.match(/openButton\.addEventListener\('click'[\s\S]*?\n\}\);/);
+assert.ok(openHandler && /bgMusic\.play\(\)/.test(openHandler[0]),
+  'bgMusic.play() must be invoked inside the open-button click handler');
+
 console.log('Static Pesta 15 Tahun (Bahasa Indonesia) invitation contract checks passed.');
