@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Undangan pernikahan dan RSVP Dira & Arka.">
+  <meta name="theme-color" content="#eef0ff">
+  <title>Dira & Arka — Undangan Pernikahan</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="opening" id="opening" aria-modal="true" aria-labelledby="opening-title" role="dialog">
+    <div class="opening__glow" aria-hidden="true"></div>
+    <p class="eyebrow">UNDANGAN UNTUK ANDA</p>
+    <h1 id="opening-title">Dira<br><span>&amp;</span> Arka</h1>
+    <p class="opening__note">Sebuah hari untuk pulang pada cinta.</p>
+    <button class="button button--ivory" id="open-invitation" type="button">Buka undangan <span aria-hidden="true">→</span></button>
+  </div>
+
+  <main class="page-shell" id="invitation" tabindex="-1">
+    <article class="invitation" aria-labelledby="couple-names">
+      <header class="masthead">
+        <p class="eyebrow">AKAN MENIKAH</p>
+        <h1 id="couple-names">Dira <span>&amp;</span> Arka</h1>
+        <p class="date-line">Sabtu, 18 Oktober 2026</p>
+      </header>
+
+      <section class="envelope-scene" aria-label="Ilustrasi amplop biru dengan bunga lili" role="img">
+        <div class="envelope">
+          <div class="envelope__flap"></div>
+          <div class="envelope__front"></div>
+          <div class="envelope__seal">D<span>♡</span>A</div>
+        </div>
+        <div class="calla calla--left" aria-hidden="true"><i></i><b></b><em></em></div>
+        <div class="calla calla--center" aria-hidden="true"><i></i><b></b><em></em></div>
+        <div class="calla calla--right" aria-hidden="true"><i></i><b></b><em></em></div>
+        <div class="sprig sprig--left" aria-hidden="true"></div>
+        <div class="sprig sprig--right" aria-hidden="true"></div>
+      </section>
+
+      <section class="message" aria-labelledby="invitation-title">
+        <p class="eyebrow">DENGAN SUKACITA</p>
+        <h2 id="invitation-title">Mari rayakan awal cerita kami</h2>
+        <p>Dengan penuh rasa syukur, kami mengundang Anda untuk hadir dan berbagi hangatnya hari istimewa kami.</p>
+      </section>
+
+      <section class="event-details" aria-label="Detail acara">
+        <div class="detail"><span class="detail__label">AKAD &amp; RESEPSI</span><strong>16.00 WIB</strong><span>hingga selesai</span></div>
+        <div class="detail"><span class="detail__label">TEMPAT</span><strong>Rumah Kaca Amerta</strong><span>Jl. Puspa 18, Bandung</span></div>
+      </section>
+
+      <button class="calendar-link" id="calendar-button" type="button" aria-label="Tambahkan acara ke kalender">Tambahkan ke kalender <span aria-hidden="true">↓</span></button>
+
+      <section class="rsvp-card" id="rsvp-section" aria-labelledby="rsvp-title">
+        <div class="rsvp-card__heading">
+          <p class="eyebrow">KONFIRMASI KEHADIRAN</p>
+          <h2 id="rsvp-title">RSVP</h2>
+          <p>Mohon kabari kami sebelum 4 Oktober 2026.</p>
+        </div>
+
+        <form id="rsvp-form" novalidate>
+          <div class="field-group">
+            <label for="guest-name">Nama Anda</label>
+            <input id="guest-name" name="guest-name" type="text" autocomplete="name" placeholder="Tulis nama lengkap" required aria-describedby="name-error">
+            <p class="field-error" id="name-error"></p>
+          </div>
+          <div class="field-group">
+            <label for="attendance">Apakah Anda dapat hadir?</label>
+            <select id="attendance" name="attendance" required aria-describedby="attendance-error">
+              <option value="">Pilih jawaban</option>
+              <option value="hadir">Ya, dengan senang hati</option>
+              <option value="tidak-hadir">Maaf, belum dapat hadir</option>
+            </select>
+            <p class="field-error" id="attendance-error"></p>
+          </div>
+          <div class="field-group">
+            <label for="guest-count">Jumlah tamu</label>
+            <select id="guest-count" name="guest-count" required aria-describedby="count-error">
+              <option value="">Pilih jumlah</option>
+              <option value="1">1 orang</option>
+              <option value="2">2 orang</option>
+              <option value="3">3 orang</option>
+              <option value="4">4 orang</option>
+            </select>
+            <p class="field-error" id="count-error"></p>
+          </div>
+          <div class="field-group">
+            <label for="notes">Catatan makanan atau pesan <span>(opsional)</span></label>
+            <textarea id="notes" name="notes" rows="4" placeholder="Misalnya: vegetarian, atau tuliskan doa baik Anda."></textarea>
+          </div>
+          <button class="button button--blue" type="submit">Kirim konfirmasi <span aria-hidden="true">→</span></button>
+          <p class="form-status" id="form-status" aria-live="polite" role="status"></p>
+        </form>
+
+        <div class="thank-you" id="thank-you" hidden tabindex="-1">
+          <div class="thank-you__mark" aria-hidden="true">♡</div>
+          <p class="eyebrow">TERIMA KASIH</p>
+          <h2>Sampai jumpa, <span id="guest-name-display">Sahabat</span>.</h2>
+          <p id="thank-you-message">Kehadiran Anda akan membuat hari kami semakin bermakna.</p>
+          <button class="calendar-link" id="calendar-button-success" type="button">Simpan detail acara <span aria-hidden="true">↓</span></button>
+        </div>
+      </section>
+
+      <footer>Dengan hangat, Dira &amp; Arka</footer>
+    </article>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
