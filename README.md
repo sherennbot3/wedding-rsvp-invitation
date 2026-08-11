@@ -1,6 +1,6 @@
 # Pesta 15 Tahun — Ximena (Undangan Digital)
 
-A dependency-free, mobile-first **Pesta 15 Tahun (XV Años / quinceañera)** invitation for Ximena, written in **Bahasa Indonesia**, with an original blush/peach/rose/gold/sage art direction. It uses only HTML, CSS, inline SVG, and JavaScript—no external artwork, libraries, build tooling, or network dependencies (Google Fonts is optional and degrades gracefully to system serif/script fallbacks offline).
+A dependency-free, mobile-first **Pesta 15 Tahun (XV Años / quinceañera)** invitation for Ximena, written in **Bahasa Indonesia**, with a warm earth-toned maroon/brown/ocher/gold/cream art direction. It uses only HTML, CSS, inline SVG, and JavaScript—no external artwork, libraries, build tooling, or network dependencies (Google Fonts is optional and degrades gracefully to system serif/script fallbacks offline).
 
 This is an **invitation-only** page: it presents the event details and contains **no RSVP form** or attendance-collection controls.
 
@@ -10,7 +10,7 @@ All user-facing copy is in natural **Bahasa Indonesia** (`<html lang="id">`). Th
 
 ## Design direction
 
-- Soft blush background with layered peach, rose-pink, gold, and sage accents
+- Cream paper background with layered maroon, reddish-brown, ocher, and gold accents
 - Original hand-drawn CSS/SVG floral vines, roses, gold flourishes, and a tiara motif
 - A gold tiara-clasp opening state that reveals the invitation
 - Elegant script display type (`Great Vibes`) paired with a refined serif (`Cormorant Garamond`) and graceful serif/system fallbacks
@@ -87,7 +87,7 @@ Halaman memuat elemen `<audio id="bg-music" loop preload="auto">` (tanpa atribut
 ## Features
 
 - Opening state with keyboard-accessible tiara button (tap to open)
-- Metallic gold intro-video frame with graceful placeholder fallback (self-hosted, replaceable)
+- Metallic maroon/brown-and-gold intro-video frame with graceful placeholder fallback (self-hosted, replaceable)
 - Background music that starts on the "Buka Undangan" tap, with an accessible gold play/pause toggle
 - Live countdown to the event date
 - Downloadable `.ics` "Tambah ke Kalender" button (informational)

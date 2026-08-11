@@ -131,10 +131,20 @@ assert.match(js, /Pesta 15 Tahun Ximena/, 'eventConfig title in Indonesian');
 assert.match(js, /Misa Syukur dan Resepsi/, 'eventConfig description in Indonesian');
 
 // Palette + mobile-first + a11y hooks.
-assert.match(css, /--blush:/);
-assert.match(css, /--gold:/);
-assert.match(css, /--sage:/);
+assert.match(css, /--cream:\s*#E0D6B8/i);
+assert.match(css, /--maroon:\s*#800000/i);
+assert.match(css, /--brown:\s*#633A2C/i);
+assert.match(css, /--ocher:\s*#B8842C/i);
+assert.match(css, /--gold:\s*#B8860B/i);
 assert.match(css, /--script:/);
+// No legacy blush/lavender/sage/pink or previous gold hexes remain.
+assert.doesNotMatch(css, /--blush\b/, 'legacy --blush variable removed');
+assert.doesNotMatch(css, /--sage\b/, 'legacy --sage variable removed');
+assert.doesNotMatch(css, /--rose\b/, 'legacy --rose variable removed');
+assert.doesNotMatch(css, /#c9a227/i, 'legacy gold hex removed');
+assert.doesNotMatch(css, /#f7d9d0/i, 'legacy blush hex removed');
+assert.doesNotMatch(css, /#d98a97/i, 'legacy rose hex removed');
+assert.doesNotMatch(css, /#9db99a/i, 'legacy sage hex removed');
 assert.match(css, /width:min\(100%,\s*480px\)/);
 assert.match(css, /clamp\(/);
 assert.match(css, /min-height:44px/);
