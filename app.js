@@ -1,12 +1,12 @@
 // Edit this object to personalize the event before publishing.
 const eventConfig = {
-  title: 'Pesta 15 Tahun Ximena',
-  // Local event start: Sabtu, 14 Maret 2026, 18.00 (Misa Syukur). Adjust the Z time to your timezone offset.
-  start: '20260314T180000',
-  end: '20260315T020000',
-  target: '2026-03-14T18:00:00', // countdown target (local time)
-  location: 'Gereja Sagrado Corazón',
-  description: 'Misa Syukur dan Resepsi Pesta 15 Tahun Ximena.'
+  title: 'Pernikahan Dicky & Go Youn Jung',
+  // Local event start: Sabtu, 14 September 2026, 10.00 (Akad Nikah). Adjust the Z time to your timezone offset.
+  start: '20260914T100000',
+  end: '20260914T170000',
+  target: '2026-09-14T10:00:00', // countdown target (local time)
+  location: 'Hotel Grand Jasmine Ballroom',
+  description: 'Akad Nikah dan Resepsi Pernikahan Dicky & Go Youn Jung.'
 };
 
 const opening = document.querySelector('#opening');

@@ -19,271 +19,252 @@
       <span class="ornament-flourish" aria-hidden="true">
         <svg viewBox="0 0 120 24" focusable="false"><path d="M4 12h30M86 12h30"/><path class="petal" d="M60 4c6 4 6 12 0 16-6-4-6-12 0-16z"/><circle cx="45" cy="12" r="2"/><circle cx="75" cy="12" r="2"/></svg>
       </span>
-      <p class="eyebrow">PESTA 15 TAHUN</p>
-      <h1 id="opening-title">Ximena</h1>
-      <p class="opening__note">Dengan restu Tuhan dan kedua orang tuaku, aku mengundangmu untuk merayakan hari yang sangat istimewa ini.</p>
+      <p class="eyebrow">PERNIKAHAN</p>
+      <h1 id="opening-title">Dicky & Go Youn Jung</h1>
+      <p class="opening__note">Dengan penuh rasa syukur, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan merayakan momen sakral pernikahan kami.</p>
       <button class="tiara-clasp" id="open-button" type="button" aria-describedby="open-help">
         <span class="tiara-clasp__icon" aria-hidden="true">
           <svg viewBox="0 0 48 30" focusable="false"><path d="M4 26h40l-4-14-8 8-8-14-8 14-8-8z"/><circle cx="24" cy="6" r="2.4"/><circle cx="8" cy="12" r="2"/><circle cx="40" cy="12" r="2"/></svg>
         </span>
         <span>Buka Undangan</span>
       </button>
-      <p class="sr-only" id="open-help">Ketuk tombol tiara untuk membuka detail undangan.</p>
+      <p class="sr-only" id="open-help">Ketuk tombol untuk membuka detail undangan.</p>
     </div>
   </div>
 
   <main class="page-shell" id="invitation" tabindex="-1">
-    <article class="invitation" aria-labelledby="hero-name">
+    <div class="wedding-layout">
+      <article class="invitation" aria-labelledby="hero-name">
 
-      <div class="floral floral--top" aria-hidden="true">
-        <svg viewBox="0 0 390 150" focusable="false">
-          <path d="M-15 108 C46 56 83 128 140 86 S230 74 260 34 S335 30 405 66"/>
-          <path class="leaf" d="M121 96q-17-21 7-27q5 19-7 27M167 78q13-23 28-8q-12 15-28 8M275 40q-13-21 9-24q4 16-9 24"/>
-          <g class="rose"><circle cx="57" cy="92" r="8"/><circle cx="57" cy="92" r="4"/></g>
-          <g class="rose"><circle cx="216" cy="62" r="9"/><circle cx="216" cy="62" r="4.5"/></g>
-          <g class="rose"><circle cx="316" cy="42" r="7"/><circle cx="316" cy="42" r="3.5"/></g>
-        </svg>
-      </div>
-
-      <!-- HERO -->
-      <header class="hero" id="hero">
-        <p class="eyebrow">PESTA 15 TAHUN</p>
-        <div class="tiara" aria-label="Tiara" role="img">
-          <svg viewBox="0 0 160 84" focusable="false" aria-hidden="true">
-            <path class="tiara__band" d="M12 70h136"/>
-            <path class="tiara__peaks" d="M12 70 L40 26 L64 58 L80 12 L96 58 L120 26 L148 70"/>
-            <circle class="tiara__gem" cx="80" cy="12" r="5"/>
-            <circle class="tiara__gem" cx="40" cy="26" r="4"/>
-            <circle class="tiara__gem" cx="120" cy="26" r="4"/>
-            <circle class="tiara__gem" cx="64" cy="58" r="3"/>
-            <circle class="tiara__gem" cx="96" cy="58" r="3"/>
+        <div class="floral floral--top" aria-hidden="true">
+          <svg viewBox="0 0 390 150" focusable="false">
+            <path d="M-15 108 C46 56 83 128 140 86 S230 74 260 34 S335 30 405 66"/>
+            <path class="leaf" d="M121 96q-17-21 7-27q5 19-7 27M167 78q13-23 28-8q-12 15-28 8M275 40q-13-21 9-24q4 16-9 24"/>
+            <g class="rose"><circle cx="57" cy="92" r="8"/><circle cx="57" cy="92" r="4"/></g>
+            <g class="rose"><circle cx="216" cy="62" r="9"/><circle cx="216" cy="62" r="4.5"/></g>
+            <g class="rose"><circle cx="316" cy="42" r="7"/><circle cx="316" cy="42" r="3.5"/></g>
           </svg>
         </div>
-        <h1 id="hero-name">Ximena</h1>
-        <p class="hero__date">Sabtu, 14 Maret 2026</p>
 
-        <!-- INTRO VIDEO — bingkai metalik emas (original CSS, tanpa aset berhak cipta) -->
-        <!--
-          CARA MEMASANG VIDEO INTRO ASLI:
-          1. Buat folder bernama "video" di root proyek (sejajar dengan index.html).
-          2. Simpan file video Anda di dalamnya sebagai: video/intro.mp4
-          3. (Opsional) Simpan gambar poster di: foto/intro-poster.jpg
-          4. Selesai — video akan muncul otomatis di dalam bingkai emas ini.
-          Catatan: video sengaja dibuat "muted" (tanpa suara) agar tidak bentrok
-          dengan lagu latar. Jika file video belum ada, placeholder elegan akan
-          tampil otomatis (tanpa error).
-        -->
-        <div class="intro-frame" role="img" aria-label="Bingkai video intro — ganti dengan video Anda">
-          <div class="intro-frame__inner">
-            <video
-              class="intro-frame__video"
-              id="intro-video"
-              muted
-              loop
-              playsinline
-              autoplay
-              preload="metadata"
-              poster="foto/intro-poster.jpg"
-              onerror="this.classList.add('is-missing');"
-              aria-hidden="true">
-              <source src="video/intro.mp4" type="video/mp4">
-            </video>
-            <div class="intro-frame__placeholder" aria-hidden="true">
-              <svg class="intro-frame__glyph" viewBox="0 0 64 64" focusable="false">
-                <circle cx="32" cy="32" r="22"/>
-                <path d="M27 23l16 9-16 9z"/>
-              </svg>
-              <span class="intro-frame__hint">Video Intro</span>
+        <!-- HERO -->
+        <header class="hero" id="hero">
+          <p class="eyebrow">PERNIKAHAN</p>
+          <div class="tiara" aria-label="Dekorasi" role="img">
+            <svg viewBox="0 0 160 84" focusable="false" aria-hidden="true">
+              <path class="tiara__band" d="M12 70h136"/>
+              <path class="tiara__peaks" d="M12 70 L40 26 L64 58 L80 12 L96 58 L120 26 L148 70"/>
+              <circle class="tiara__gem" cx="80" cy="12" r="5"/>
+              <circle class="tiara__gem" cx="40" cy="26" r="4"/>
+              <circle class="tiara__gem" cx="120" cy="26" r="4"/>
+              <circle class="tiara__gem" cx="64" cy="58" r="3"/>
+              <circle class="tiara__gem" cx="96" cy="58" r="3"/>
+            </svg>
+          </div>
+          <h1 id="hero-name">Dicky &amp; Go Youn Jung</h1>
+          <p class="hero__date">Sabtu, 14 September 2026</p>
+
+          <div class="intro-frame" role="img" aria-label="Bingkai foto undangan pernikahan">
+            <div class="intro-frame__inner">
+              <video
+                class="intro-frame__video"
+                id="intro-video"
+                muted
+                loop
+                playsinline
+                autoplay
+                preload="metadata"
+                poster="foto/intro-poster.jpg"
+                onerror="this.classList.add('is-missing');"
+                aria-hidden="true">
+                <source src="video/intro.mp4" type="video/mp4">
+              </video>
+              <div class="intro-frame__placeholder" aria-hidden="true">
+                <svg class="intro-frame__glyph" viewBox="0 0 64 64" focusable="false">
+                  <circle cx="32" cy="32" r="22"/>
+                  <path d="M27 23l16 9-16 9z"/>
+                </svg>
+                <span class="intro-frame__hint">Prewedding</span>
+              </div>
             </div>
           </div>
-        </div>
-      </header>
+        </header>
 
-      <!-- OPENING QUOTE -->
-      <section class="quote" aria-label="Kutipan">
-        <p class="quote__text">«Hari ini aku meninggalkan masa kanak-kanak dan melangkah menuju impianku, dikelilingi cinta dari mereka yang membuat hidupku lebih indah.»</p>
-      </section>
+        <section class="quote" aria-label="Kutipan">
+          <p class="quote__text">«Dengan hati yang terbuka dan penuh syukur, kami siap memulai babak baru kehidupan bersama, dan kami ingin berbagi kebahagiaan ini dengan Anda.»</p>
+        </section>
 
-      <!-- PADRES & PADRINOS -->
-      <section class="people" id="padres-padrinos" aria-labelledby="people-title">
-        <h2 id="people-title" class="section-title">Dengan Cinta</h2>
-        <div class="people__grid">
-          <div class="people__block">
-            <p class="people__label">Orang Tua</p>
-            <p class="people__names">Rafael López<br>&amp; Emilia Peredo</p>
+        <section class="people" id="padres-padrinos" aria-labelledby="people-title">
+          <h2 id="people-title" class="section-title">Dengan Cinta</h2>
+          <div class="people__grid">
+            <div class="people__block">
+              <p class="people__label">Keluarga Mempelai Wanita</p>
+              <p class="people__names">Bapak Agus Santoso<br>&amp; Ibu Rina Wulandari</p>
+            </div>
+            <div class="people__block">
+              <p class="people__label">Keluarga Mempelai Pria</p>
+              <p class="people__names">Bapak Fadli Rahman<br>&amp; Ibu Siti Aisyah</p>
+            </div>
           </div>
-          <div class="people__block">
-            <p class="people__label">Orang Tua Baptis</p>
-            <p class="people__names">Freddy Pérez<br>&amp; Mónica Bernal</p>
+        </section>
+
+        <section class="date-block" id="fecha" aria-labelledby="date-title">
+          <h2 id="date-title" class="section-title">Tanggal Acara</h2>
+          <p class="date-block__full">Sabtu, 14 September 2026</p>
+          <div class="countdown" id="countdown" aria-live="polite" aria-label="Hitung mundur">
+            <div class="countdown__unit"><strong id="cd-days">--</strong><span>Hari</span></div>
+            <div class="countdown__unit"><strong id="cd-hours">--</strong><span>Jam</span></div>
+            <div class="countdown__unit"><strong id="cd-minutes">--</strong><span>Menit</span></div>
+            <div class="countdown__unit"><strong id="cd-seconds">--</strong><span>Detik</span></div>
           </div>
+          <button class="calendar-link" id="calendar-button" type="button" aria-label="Tambahkan acara ke kalender">Tambah ke Kalender <span aria-hidden="true">↓</span></button>
+        </section>
+
+        <section class="venue" id="misa" aria-labelledby="misa-title">
+          <p class="venue__eyebrow">UPACARA</p>
+          <h2 id="misa-title" class="section-title">Akad Nikah</h2>
+          <p class="venue__time">10.00 WIB</p>
+          <p class="venue__place">Hotel Grand Jasmine Ballroom</p>
+          <a class="maps-link" id="misa-maps" href="https://www.google.com/maps/search/?api=1&query=Hotel+Grand+Jasmine+Ballroom" target="_blank" rel="noopener">Lihat Lokasi <span aria-hidden="true">➜</span></a>
+        </section>
+
+        <section class="venue" id="recepcion" aria-labelledby="recepcion-title">
+          <p class="venue__eyebrow">PERAYAAN</p>
+          <h2 id="recepcion-title" class="section-title">Resepsi</h2>
+          <p class="venue__time">13.00 WIB</p>
+          <p class="venue__place">Taman Garden Seruni</p>
+          <a class="maps-link" id="recepcion-maps" href="https://www.google.com/maps/search/?api=1&query=Taman+Garden+Seruni" target="_blank" rel="noopener">Lihat Lokasi <span aria-hidden="true">➜</span></a>
+        </section>
+
+        <section class="itinerary" id="itinerario" aria-labelledby="itinerary-title">
+          <h2 id="itinerary-title" class="section-title">Rangkaian Acara</h2>
+          <ol class="timeline">
+            <li class="timeline__item"><span class="timeline__time">09.30 WIB</span><span class="timeline__event">Kedatangan Tamu</span></li>
+            <li class="timeline__item"><span class="timeline__time">10.00 WIB</span><span class="timeline__event">Akad Nikah</span></li>
+            <li class="timeline__item"><span class="timeline__time">11.00 WIB</span><span class="timeline__event">Sesi Foto</span></li>
+            <li class="timeline__item"><span class="timeline__time">13.00 WIB</span><span class="timeline__event">Resepsi</span></li>
+            <li class="timeline__item"><span class="timeline__time">17.00 WIB</span><span class="timeline__event">Penutup</span></li>
+          </ol>
+        </section>
+
+        <section class="gallery" id="galeri" aria-labelledby="gallery-title">
+          <h2 id="gallery-title" class="section-title">Galeri Kami</h2>
+          <div class="gallery__grid">
+            <figure class="photo-frame">
+              <div class="photo-frame__placeholder" role="img" aria-label="Bingkai foto placeholder — ganti dengan foto Anda">
+                <svg class="photo-frame__glyph" viewBox="0 0 48 40" focusable="false" aria-hidden="true">
+                  <rect x="4" y="10" width="40" height="26" rx="4"/>
+                  <path d="M17 10l3-5h8l3 5"/>
+                  <circle cx="24" cy="23" r="7"/>
+                  <circle cx="24" cy="23" r="3"/>
+                </svg>
+              </div>
+              <figcaption class="photo-frame__caption">Foto 1</figcaption>
+            </figure>
+
+            <figure class="photo-frame">
+              <div class="photo-frame__placeholder" role="img" aria-label="Bingkai foto placeholder — ganti dengan foto Anda">
+                <svg class="photo-frame__glyph" viewBox="0 0 48 48" focusable="false" aria-hidden="true">
+                  <path d="M24 8c4 6 10 6 10 14a10 10 0 0 1-20 0c0-8 6-8 10-14z"/>
+                  <path d="M24 22v18M18 30c3 1 6 1 6 4M30 30c-3 1-6 1-6 4"/>
+                </svg>
+              </div>
+              <figcaption class="photo-frame__caption">Foto 2</figcaption>
+            </figure>
+
+            <figure class="photo-frame">
+              <div class="photo-frame__placeholder" role="img" aria-label="Bingkai foto placeholder — ganti dengan foto Anda">
+                <svg class="photo-frame__glyph" viewBox="0 0 48 40" focusable="false" aria-hidden="true">
+                  <rect x="4" y="10" width="40" height="26" rx="4"/>
+                  <path d="M17 10l3-5h8l3 5"/>
+                  <circle cx="24" cy="23" r="7"/>
+                  <circle cx="24" cy="23" r="3"/>
+                </svg>
+              </div>
+              <figcaption class="photo-frame__caption">Foto 3</figcaption>
+            </figure>
+
+            <figure class="photo-frame">
+              <div class="photo-frame__placeholder" role="img" aria-label="Bingkai foto placeholder — ganti dengan foto Anda">
+                <svg class="photo-frame__glyph" viewBox="0 0 48 48" focusable="false" aria-hidden="true">
+                  <path d="M24 8c4 6 10 6 10 14a10 10 0 0 1-20 0c0-8 6-8 10-14z"/>
+                  <path d="M24 22v18M18 30c3 1 6 1 6 4M30 30c-3 1-6 1-6 4"/>
+                </svg>
+              </div>
+              <figcaption class="photo-frame__caption">Foto 4</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="dress-code" id="dress-code" aria-labelledby="dress-title">
+          <h2 id="dress-title" class="section-title">Kode Berpakaian</h2>
+          <p class="dress-code__main">Formal / Elegan</p>
+          <p class="dress-code__note">Kami mengharapkan tamu datang dengan busana yang rapi dan berkesan elegan untuk menyemarakkan momen indah ini.</p>
+        </section>
+
+        <section class="gifts" id="gifts" aria-labelledby="gifts-title">
+          <h2 id="gifts-title" class="section-title">Ucapan &amp; Hadiah</h2>
+          <p class="gifts__note">Kehadiran Anda adalah anugerah terbesar bagi kami. Jika Anda ingin memberi hadiah, kami dengan senang hati menerima melalui transfer berikut:</p>
+          <dl class="bank-details">
+            <div><dt>Bank</dt><dd>BCA</dd></div>
+            <div><dt>Atas Nama</dt><dd>Dicky &amp; Go Youn Jung</dd></div>
+            <div><dt>Nomor Rekening</dt><dd>1234567890</dd></div>
+            <div><dt>Kode</dt><dd>014</dd></div>
+          </dl>
+        </section>
+
+        <footer class="closing">
+          <div class="floral floral--bottom" aria-hidden="true">
+            <svg viewBox="0 0 390 110" focusable="false">
+              <path d="M-10 74 C55 32 103 92 157 62 S266 62 312 20 S360 26 403 8"/>
+              <path class="leaf" d="M109 68q-14-17 6-22q4 15-6 22M213 63q10-18 23-7q-9 13-23 7"/>
+              <g class="rose"><circle cx="67" cy="46" r="7"/><circle cx="67" cy="46" r="3.5"/></g>
+              <g class="rose"><circle cx="274" cy="44" r="7"/><circle cx="274" cy="44" r="3.5"/></g>
+            </svg>
+          </div>
+          <p class="closing__text">Kami Menantikan Kehadiran Anda</p>
+          <p class="closing__sign">Dengan penuh cinta, Dicky &amp; Go Youn Jung</p>
+        </footer>
+
+      </article>
+
+      <aside class="side-panel" aria-label="Panel RSVP">
+        <div class="side-panel__card side-panel__card--soft">
+          <p class="side-panel__eyebrow">Your presence</p>
+          <p class="side-panel__text">Your presence at our wedding would mean the world to us.</p>
+          <button class="side-panel__button" type="button">The Wedding Registry</button>
         </div>
-      </section>
 
-      <!-- FECHA + COUNTDOWN -->
-      <section class="date-block" id="fecha" aria-labelledby="date-title">
-        <h2 id="date-title" class="section-title">Tanggal Acara</h2>
-        <p class="date-block__full">Sabtu, 14 Maret 2026</p>
-        <div class="countdown" id="countdown" aria-live="polite" aria-label="Hitung mundur">
-          <div class="countdown__unit"><strong id="cd-days">--</strong><span>Hari</span></div>
-          <div class="countdown__unit"><strong id="cd-hours">--</strong><span>Jam</span></div>
-          <div class="countdown__unit"><strong id="cd-minutes">--</strong><span>Menit</span></div>
-          <div class="countdown__unit"><strong id="cd-seconds">--</strong><span>Detik</span></div>
+        <div class="side-panel__card side-panel__card--feature">
+          <div class="side-panel__stamp">RSVP</div>
+          <div class="side-panel__row">
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your full name" />
+          </div>
+          <div class="side-panel__row">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="Enter your phone number" />
+          </div>
+          <div class="side-panel__row">
+            <label>Will you attend?</label>
+            <div class="side-panel__options">
+              <button type="button" class="option active">I’ll be there</button>
+              <button type="button" class="option">Sorry, I can’t make it</button>
+            </div>
+          </div>
+          <div class="side-panel__row">
+            <label>Number of guests</label>
+            <div class="side-panel__counter">
+              <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
+            </div>
+          </div>
+          <div class="side-panel__row">
+            <label>Message</label>
+            <textarea placeholder="Send your best wishes to the couple..."></textarea>
+          </div>
+          <button class="side-panel__submit" type="button">Send confirmation</button>
         </div>
-        <button class="calendar-link" id="calendar-button" type="button" aria-label="Tambahkan acara ke kalender">Tambah ke Kalender <span aria-hidden="true">↓</span></button>
-      </section>
-
-      <!-- MISA -->
-      <section class="venue" id="misa" aria-labelledby="misa-title">
-        <p class="venue__eyebrow">UPACARA</p>
-        <h2 id="misa-title" class="section-title">Misa Syukur</h2>
-        <p class="venue__time">18.00 WIB</p>
-        <p class="venue__place">Gereja Sagrado Corazón</p>
-        <a class="maps-link" id="misa-maps" href="https://www.google.com/maps/search/?api=1&query=Iglesia+Sagrado+Coraz%C3%B3n" target="_blank" rel="noopener">Lihat Lokasi <span aria-hidden="true">➜</span></a>
-      </section>
-
-      <!-- RECEPCIÓN -->
-      <section class="venue" id="recepcion" aria-labelledby="recepcion-title">
-        <p class="venue__eyebrow">PERAYAAN</p>
-        <h2 id="recepcion-title" class="section-title">Resepsi</h2>
-        <p class="venue__time">19.00 WIB</p>
-        <p class="venue__place">Gedung Pesta Quinta La Bonita</p>
-        <a class="maps-link" id="recepcion-maps" href="https://www.google.com/maps/search/?api=1&query=Sal%C3%B3n+de+Fiestas+Quinta+La+Bonita" target="_blank" rel="noopener">Lihat Lokasi <span aria-hidden="true">➜</span></a>
-      </section>
-
-      <!-- ITINERARIO -->
-      <section class="itinerary" id="itinerario" aria-labelledby="itinerary-title">
-        <h2 id="itinerary-title" class="section-title">Rangkaian Acara</h2>
-        <ol class="timeline">
-          <li class="timeline__item"><span class="timeline__time">19.00 WIB</span><span class="timeline__event">Kedatangan</span></li>
-          <li class="timeline__item"><span class="timeline__time">19.30 WIB</span><span class="timeline__event">Vals (Waltz)</span></li>
-          <li class="timeline__item"><span class="timeline__time">20.00 WIB</span><span class="timeline__event">Sesi Foto</span></li>
-          <li class="timeline__item"><span class="timeline__time">21.00 WIB</span><span class="timeline__event">Pesta</span></li>
-          <li class="timeline__item"><span class="timeline__time">02.00 WIB</span><span class="timeline__event">Penutup</span></li>
-        </ol>
-      </section>
-
-      <!-- GALERI FOTO -->
-      <section class="gallery" id="galeri" aria-labelledby="gallery-title">
-        <h2 id="gallery-title" class="section-title">Galeri Foto</h2>
-        <div class="gallery__grid">
-
-          <!-- FRAME 1 -->
-          <figure class="photo-frame">
-            <!--
-              CARA MENGGANTI DENGAN FOTO ASLI (Foto 1):
-              1. Simpan foto Anda di folder proyek, misalnya: foto/foto-1.jpg
-              2. Hapus <div class="photo-frame__placeholder">...</div> di bawah ini.
-              3. Ganti dengan elemen gambar standar:
-                 <img class="photo-frame__img" src="foto/foto-1.jpg" alt="Ximena tersenyum saat sesi foto" loading="lazy">
-              4. Tulis alt text yang deskriptif (jelaskan isi foto) demi aksesibilitas.
-            -->
-            <div class="photo-frame__placeholder" role="img" aria-label="Bingkai foto placeholder — ganti dengan foto Anda">
-              <svg class="photo-frame__glyph" viewBox="0 0 48 40" focusable="false" aria-hidden="true">
-                <rect x="4" y="10" width="40" height="26" rx="4"/>
-                <path d="M17 10l3-5h8l3 5"/>
-                <circle cx="24" cy="23" r="7"/>
-                <circle cx="24" cy="23" r="3"/>
-              </svg>
-            </div>
-            <figcaption class="photo-frame__caption">Foto 1</figcaption>
-          </figure>
-
-          <!-- FRAME 2 -->
-          <figure class="photo-frame">
-            <!--
-              CARA MENGGANTI DENGAN FOTO ASLI (Foto 2):
-              1. Simpan foto Anda di folder proyek, misalnya: foto/foto-2.jpg
-              2. Hapus <div class="photo-frame__placeholder">...</div> di bawah ini.
-              3. Ganti dengan elemen gambar standar:
-                 <img class="photo-frame__img" src="foto/foto-2.jpg" alt="Deskripsi singkat foto" loading="lazy">
-              4. Tulis alt text yang deskriptif (jelaskan isi foto) demi aksesibilitas.
-            -->
-            <div class="photo-frame__placeholder" role="img" aria-label="Bingkai foto placeholder — ganti dengan foto Anda">
-              <svg class="photo-frame__glyph" viewBox="0 0 48 48" focusable="false" aria-hidden="true">
-                <path d="M24 8c4 6 10 6 10 14a10 10 0 0 1-20 0c0-8 6-8 10-14z"/>
-                <path d="M24 22v18M18 30c3 1 6 1 6 4M30 30c-3 1-6 1-6 4"/>
-              </svg>
-            </div>
-            <figcaption class="photo-frame__caption">Foto 2</figcaption>
-          </figure>
-
-          <!-- FRAME 3 -->
-          <figure class="photo-frame">
-            <!--
-              CARA MENGGANTI DENGAN FOTO ASLI (Foto 3):
-              1. Simpan foto Anda di folder proyek, misalnya: foto/foto-3.jpg
-              2. Hapus <div class="photo-frame__placeholder">...</div> di bawah ini.
-              3. Ganti dengan elemen gambar standar:
-                 <img class="photo-frame__img" src="foto/foto-3.jpg" alt="Deskripsi singkat foto" loading="lazy">
-              4. Tulis alt text yang deskriptif (jelaskan isi foto) demi aksesibilitas.
-            -->
-            <div class="photo-frame__placeholder" role="img" aria-label="Bingkai foto placeholder — ganti dengan foto Anda">
-              <svg class="photo-frame__glyph" viewBox="0 0 48 40" focusable="false" aria-hidden="true">
-                <rect x="4" y="10" width="40" height="26" rx="4"/>
-                <path d="M17 10l3-5h8l3 5"/>
-                <circle cx="24" cy="23" r="7"/>
-                <circle cx="24" cy="23" r="3"/>
-              </svg>
-            </div>
-            <figcaption class="photo-frame__caption">Foto 3</figcaption>
-          </figure>
-
-          <!-- FRAME 4 -->
-          <figure class="photo-frame">
-            <!--
-              CARA MENGGANTI DENGAN FOTO ASLI (Foto 4):
-              1. Simpan foto Anda di folder proyek, misalnya: foto/foto-4.jpg
-              2. Hapus <div class="photo-frame__placeholder">...</div> di bawah ini.
-              3. Ganti dengan elemen gambar standar:
-                 <img class="photo-frame__img" src="foto/foto-4.jpg" alt="Deskripsi singkat foto" loading="lazy">
-              4. Tulis alt text yang deskriptif (jelaskan isi foto) demi aksesibilitas.
-            -->
-            <div class="photo-frame__placeholder" role="img" aria-label="Bingkai foto placeholder — ganti dengan foto Anda">
-              <svg class="photo-frame__glyph" viewBox="0 0 48 48" focusable="false" aria-hidden="true">
-                <path d="M24 8c4 6 10 6 10 14a10 10 0 0 1-20 0c0-8 6-8 10-14z"/>
-                <path d="M24 22v18M18 30c3 1 6 1 6 4M30 30c-3 1-6 1-6 4"/>
-              </svg>
-            </div>
-            <figcaption class="photo-frame__caption">Foto 4</figcaption>
-          </figure>
-
-        </div>
-      </section>
-
-      <!-- CÓDIGO DE VESTIMENTA -->
-      <section class="dress-code" id="dress-code" aria-labelledby="dress-title">
-        <h2 id="dress-title" class="section-title">Kode Berpakaian</h2>
-        <p class="dress-code__main">Formal (Etiket)</p>
-        <p class="dress-code__note">Mohon hindari warna merah muda pastel, karena warna tersebut khusus untuk sang gadis yang berulang tahun.</p>
-      </section>
-
-      <!-- SUGERENCIA DE REGALOS -->
-      <section class="gifts" id="gifts" aria-labelledby="gifts-title">
-        <h2 id="gifts-title" class="section-title">Saran Hadiah</h2>
-        <p class="gifts__note">Kehadiranmu adalah hadiah terbaik bagiku. Namun jika ingin memberi sesuatu, aku dengan senang hati menerima sumbangan melalui transfer:</p>
-        <dl class="bank-details">
-          <div><dt>Bank</dt><dd>[Nama bank]</dd></div>
-          <div><dt>Atas Nama</dt><dd>[Nama pemilik rekening]</dd></div>
-          <div><dt>Nomor Rekening</dt><dd>[Nomor rekening]</dd></div>
-          <div><dt>Kode</dt><dd>[Kode bank / antarbank]</dd></div>
-        </dl>
-      </section>
-
-      <!-- CLOSING -->
-      <footer class="closing">
-        <div class="floral floral--bottom" aria-hidden="true">
-          <svg viewBox="0 0 390 110" focusable="false">
-            <path d="M-10 74 C55 32 103 92 157 62 S266 62 312 20 S360 26 403 8"/>
-            <path class="leaf" d="M109 68q-14-17 6-22q4 15-6 22M213 63q10-18 23-7q-9 13-23 7"/>
-            <g class="rose"><circle cx="67" cy="46" r="7"/><circle cx="67" cy="46" r="3.5"/></g>
-            <g class="rose"><circle cx="274" cy="44" r="7"/><circle cx="274" cy="44" r="3.5"/></g>
-          </svg>
-        </div>
-        <p class="closing__text">Kami Menantikan Kehadiranmu!</p>
-        <p class="closing__sign">Dengan penuh kasih, Ximena</p>
-      </footer>
-
-    </article>
+      </aside>
+    </div>
   </main>
 
   <!-- LAGU LATAR (background music) -->
